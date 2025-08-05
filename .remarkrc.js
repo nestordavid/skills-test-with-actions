@@ -1,0 +1,6 @@
+module.exports = {
+  plugins: [
+    'remark-preset-lint-consistent',
+    ['remark-lint-emphasis-marker', false]
+  ]
+};
