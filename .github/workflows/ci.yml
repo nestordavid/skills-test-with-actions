@@ -37,7 +37,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Run markdown lint
+      - name: Install dependencies
         run: |
           npm install --no-progress remark-cli remark-preset-lint-consistent
-          npx remark . --use remark-preset-lint-consistent --frail
+
+      - name: Run markdown lint
+        run: |
+          npx remark . --use remark-preset-lint-consistent --setting emphasis-marker='*' --frail
